@@ -18,12 +18,20 @@
 
 <script setup>
 import { useCocktailStore } from '@/stores/cocktail'
+import { onMounted, ref } from 'vue'
+import axiosClient from '@/axiosClient';
 
 const cocktailStore = useCocktailStore()
-const {juices} = cocktailStore
 
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
+const cocktailList = ref([])
+
+onMounted(async () => {
+ const response =  await axiosClient.get('list.php?i=list')
+ cocktailList.value = response.data.drinks
+
+})
 
 </script>
 
