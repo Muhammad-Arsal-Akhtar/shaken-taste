@@ -4,30 +4,39 @@ import CocktailListView from '@/views/CocktailListView.vue'
 import CocktailByLetterView from '@/views/CocktailByLetterView.vue'
 import CocktailByNameView from '@/views/CocktailByNameView.vue'
 import CocktailByIngredientView from '@/views/CocktailByIngredientView.vue'
+import DefaultLayout from '@/components/DefaultLayout.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: HomeView,
+      component: DefaultLayout,
+      children: [
+        {
+          path: '/',
+          name: 'home',
+          component: HomeView,
+        },
+        {
+          path: '/by-letter/:letter?',
+          name: 'byLetter',
+          component: CocktailByLetterView,
+        },
+        {
+          path: '/by-name/:name?',
+          name: 'byName',
+          component: CocktailByNameView,
+        },
+        {
+          path: '/by-ingredient/:ingredient?',
+          name: 'byIngredient',
+          component: CocktailByIngredientView,
+        },
+        
+      ],
     },
-    {
-      path: '/by-letter/:letter?',
-      name: 'byLetter',
-      component: CocktailByLetterView,
-    },
-    {
-      path: '/by-name/:name?',
-      name: 'byName',
-      component: CocktailByNameView,
-    },
-    {
-      path: '/by-ingredient/:ingredient?',
-      name: 'byIngredient',
-      component: CocktailByIngredientView,
-    },
+    
     // {
     //   path: '/about',
     //   name: 'about',
