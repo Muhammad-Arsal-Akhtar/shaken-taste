@@ -11,16 +11,16 @@
             </router-link>
 
             <div class="flex items-center gap-1">
-                <router-link to="/" class="inline-flex items-center h-full px-2 hover:bg-green-200">
-                    Search cocktails
+                <router-link :to="{ name: 'byName' }" class="inline-flex items-center h-full px-2 transition-colors hover:bg-green-200">
+                    Cocktails by Name
                 </router-link>
 
-                <router-link to="/" class="inline-flex items-center h-full px-2 hover:bg-green-200">
+                <router-link :to="{ name: 'byLetter' }" class="inline-flex items-center h-full px-2 transition-colors hover:bg-green-200">
                     Cocktails By Letter
                 </router-link>
 
-                <router-link to="/" class="inline-flex items-center h-full px-2 hover:bg-green-200">
-                    Search By Ingredients
+                <router-link :to="{ name: 'byIngredient' }" class="inline-flex items-center h-full px-2 transition-colors hover:bg-green-200">
+                    Cocktails By Ingredients
                 </router-link>
             </div>
         </header>

@@ -1,6 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import CocktailListView from '@/views/CocktailListView.vue'
+import CocktailByLetterView from '@/views/CocktailByLetterView.vue'
+import CocktailByNameView from '@/views/CocktailByNameView.vue'
+import CocktailByIngredientView from '@/views/CocktailByIngredientView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -11,18 +14,28 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: '/letter/:letter',
+      path: '/by-letter/:letter?',
       name: 'byLetter',
-      component: CocktailListView,
+      component: CocktailByLetterView,
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      // component: () => import('../views/AboutView.vue'),
+      path: '/by-name/:name?',
+      name: 'byName',
+      component: CocktailByNameView,
     },
+    {
+      path: '/by-ingredient/:ingredient?',
+      name: 'byIngredient',
+      component: CocktailByIngredientView,
+    },
+    // {
+    //   path: '/about',
+    //   name: 'about',
+    //   // route level code-splitting
+    //   // this generates a separate chunk (About.[hash].js) for this route
+    //   // which is lazy-loaded when the route is visited.
+    //   // component: () => import('../views/AboutView.vue'),
+    // },
   ],
 })
 
