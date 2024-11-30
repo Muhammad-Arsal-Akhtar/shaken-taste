@@ -1,6 +1,6 @@
 <template>
   <div>
-    list view here hello
+    list view ingredients
   </div>
 </template>
 
