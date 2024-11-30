@@ -1,4 +1,4 @@
-import { ref, computed } from 'vue'
+import { computed } from 'vue'
 import { defineStore } from 'pinia'
 import axiosClient from '@/axiosClient'
 
@@ -24,8 +24,16 @@ export const useSearchDrinksStore = defineStore('searchDrinks', () => {
 
 
   const getSearchDrinks = computed(() => {
-    return drinks
-  });
+    return drinks.map((drink)=>{
+      return {
+        id : drink.idDrink,
+        name: drink.strDrink,
+        imageAlt : drink.strDrinkAlternate,
+        image: drink.strDrinkThumb,
+        video: drink.strVideo,
+      }
+  })
+})
 
 
   return { drinks, searchDrink, getSearchDrinks }
