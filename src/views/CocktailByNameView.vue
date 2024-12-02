@@ -7,7 +7,7 @@
 
   <div class="grid grid-cols-1 gap-3 p-8 md:grid-cols-3">
     <div v-for="drink in drinks" :key="drink.id" class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-      <router-link to="/">
+      <router-link :to="{ name: 'drinkDetails', params: { id : drink.id } }">
         <img class="rounded-t-lg w-[383px] h-[255px]" :src="drink.image" :alt="drink.imageAlt" />
       </router-link>
       <div class="p-5">

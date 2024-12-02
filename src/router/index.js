@@ -5,6 +5,8 @@ import CocktailByLetterView from '@/views/CocktailByLetterView.vue'
 import CocktailByNameView from '@/views/CocktailByNameView.vue'
 import CocktailByIngredientView from '@/views/CocktailByIngredientView.vue'
 import DefaultLayout from '@/components/DefaultLayout.vue'
+import DrinkDetails from '@/views/DrinkDetails.vue'
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,6 +34,11 @@ const router = createRouter({
           path: '/by-ingredient/:ingredient?',
           name: 'byIngredient',
           component: CocktailByIngredientView,
+        },
+        {
+          path: '/drink-details/:id',
+          name: 'drinkDetails',
+          component: DrinkDetails,
         },
         
       ],
