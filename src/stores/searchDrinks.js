@@ -12,6 +12,7 @@ export const useSearchDrinksStore = defineStore('searchDrinks', () => {
       .then(({ data }) => {
         if (data.drinks) {
           drinks.value = data.drinks;
+          console.log(drinks.value)
         } else {
           drinks.value = [];
         }
