@@ -7,9 +7,9 @@
 
   <div class="grid grid-cols-1 gap-3 p-8 md:grid-cols-3">
     <div v-for="drink in drinks" :key="drink.id" class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-      <a href="#">
+      <router-link to="/">
         <img class="rounded-t-lg w-[383px] h-[255px]" :src="drink.image" :alt="drink.imageAlt" />
-      </a>
+      </router-link>
       <div class="p-5">
         <a href="#">
           <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{drink.name}}</h5>
@@ -33,23 +33,29 @@
 
 <script setup>
 import { useSearchDrinksStore } from '@/stores/searchDrinks';
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
+import { useRoute } from 'vue-router'
 
 const drinksStore = useSearchDrinksStore()
-
+const route = useRoute()
 
 const drinkKeyword = ref('')
 const changeDrink = () => {
   if (drinkKeyword.value.trim()) {
      drinksStore.searchDrink(drinkKeyword.value);
   }
-};
+}
 
 const drinks = computed(() => {
   return drinksStore.getSearchDrinks
 })
 
+onMounted(() => {
+  drinkKeyword.value = route.params.name
+  if(drinkKeyword.value){
+    changeDrink()
+  }
+})
+
 
 </script>
-
-<style lang="scss" scoped></style>

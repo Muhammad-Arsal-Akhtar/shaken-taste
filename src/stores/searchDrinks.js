@@ -1,40 +1,38 @@
-import { computed } from 'vue'
-import { defineStore } from 'pinia'
-import axiosClient from '@/axiosClient'
+import { computed, ref } from 'vue';
+import { defineStore } from 'pinia';
+import axiosClient from '@/axiosClient';
 
 export const useSearchDrinksStore = defineStore('searchDrinks', () => {
-
-  let drinks = []
+  // Make drinks reactive
+  const drinks = ref([]);
 
   function searchDrink(drinkKeyword) {
-
-    axiosClient.get(`search.php?s=${drinkKeyword}`).then(({ data })=> {
-    console.log(data)
-      if (data.drinks) {
-        drinks = data.drinks;
-      }else {
-        drinks = []; // Reset if no drinks found
-      }
-    }).catch(error => {
-      console.error('Error fetching drinks:', error);
-      drinks = []; // Handle errors by clearing the array
-    });
-
+    axiosClient
+      .get(`search.php?s=${drinkKeyword}`)
+      .then(({ data }) => {
+        if (data.drinks) {
+          drinks.value = data.drinks;
+        } else {
+          drinks.value = [];
+        }
+      })
+      .catch((error) => {
+        console.error('Error fetching drinks:', error);
+        drinks.value = [];
+      });
   }
 
-
   const getSearchDrinks = computed(() => {
-    return drinks.map((drink)=>{
+    return drinks.value.map((drink) => {
       return {
-        id : drink.idDrink,
+        id: drink.idDrink,
         name: drink.strDrink,
-        imageAlt : drink.strDrinkAlternate,
+        imageAlt: drink.strDrinkAlternate,
         image: drink.strDrinkThumb,
         video: drink.strVideo,
-      }
-  })
-})
+      };
+    });
+  });
 
-
-  return { drinks, searchDrink, getSearchDrinks }
-})
+  return { drinks, searchDrink, getSearchDrinks };
+});
