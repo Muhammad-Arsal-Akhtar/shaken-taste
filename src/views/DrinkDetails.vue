@@ -22,12 +22,15 @@
               ?? '-' }}</span>
           </div>
         </div>
+        <div class="my-4">
+          <p>{{ drink.strInstructions }}</p>
+        </div>
         <div class="flex justify-between">
           <div>
             <h2 class="mb-4 text-2xl font-bold">Ingredients</h2>
             <ul>
               <li v-for="(ingredient, index) in drinksList.ingredients" :key="index">
-                <span>{{ ingredient }}</span>
+                <span class="text-bold">{{ index + 1 }}<span>.</span>&nbsp;</span><span>{{ ingredient }}</span>
               </li>
             </ul>
           </div>
@@ -36,9 +39,15 @@
             <h2 class="mb-4 text-2xl font-bold">Measures</h2>
             <ul>
               <li v-for="(measure, index) in drinksList.measures" :key="index">
-                <span>{{ measure }}</span>
+                <span class="text-bold">{{ index + 1 }}<span>.</span>&nbsp;</span><span>{{ measure }}</span>
               </li>
             </ul>
+          </div>
+        </div>
+
+        <div class="mt-5">
+          <div>
+            <VideoButton :href="drink.strVideo">Go to Youtube</VideoButton>
           </div>
         </div>
       </article>
@@ -50,6 +59,7 @@
 import { ref, onMounted, computed } from "vue";
 import axiosClient from "@/axiosClient";
 import { useRoute } from "vue-router";
+import VideoButton from "@/components/VideoButton.vue";
 
 const drink = ref({})
 const route = useRoute()
