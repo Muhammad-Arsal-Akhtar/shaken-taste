@@ -3,16 +3,8 @@
     Hello world! from home {{ juices }}
   </h1> -->
   <div class="flex flex-col p-8">
-    <div>
-      
-      
-    </div>
 
-    <div class="flex justify-center gap-1 mt-2">
-      <router-link :to="{ name: 'byLetter', params: {letter} }" v-for="letter in letters" :key="letter">
-        {{ letter }}
-      </router-link>
-    </div>
+
       
   </div>
 </template>
@@ -24,7 +16,6 @@ import axiosClient from '@/axiosClient';
 
 const cocktailStore = useCocktailStore()
 
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 const cocktailList = ref([])
 
