@@ -15,7 +15,7 @@
 
 <script setup>
 import { useSearchDrinksStore } from '@/stores/searchDrinksByLetter';
-import { onMounted, computed } from 'vue';
+import { onMounted, computed, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import DrinkItem from '@/components/DrinkItem.vue';
 
@@ -24,12 +24,15 @@ const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 const route = useRoute()
 
-
 const drinks = computed(()=>{
   return drinksStore.getSearchDrinks
 })
 
 onMounted(() => {
+  drinksStore.searchDrink(route.params.letter)
+})
+
+watch(route, ()=>{
   drinksStore.searchDrink(route.params.letter)
 })
 
