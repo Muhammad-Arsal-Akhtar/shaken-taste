@@ -5,7 +5,7 @@
       v-for="(ingredient, index) in ingredients" 
       :key="index" 
       class="px-4 py-2 text-lg font-semibold text-yellow-800 bg-yellow-100 rounded dark:bg-yellow-900 dark:text-yellow-300 hover:cursor-pointer"
-      :to="{ name: 'byIngredient', params: { ingredient : ingredient.strIngredient1 } }"
+      :to="{ name: 'byIngredient', params: { ingredient : ingredient.strIngredient1.replace(/ /g, '_') } }"
       >
       {{ ingredient.strIngredient1 }}
     </router-link>
