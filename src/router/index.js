@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import CocktailListView from '@/views/CocktailListView.vue'
 import CocktailByLetterView from '@/views/CocktailByLetterView.vue'
 import CocktailByNameView from '@/views/CocktailByNameView.vue'
 import CocktailByIngredientView from '@/views/CocktailByIngredientView.vue'

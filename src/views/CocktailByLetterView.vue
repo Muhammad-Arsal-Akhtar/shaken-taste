@@ -24,15 +24,17 @@ const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 const route = useRoute()
 
-const drinks = computed(()=>{
+const drinks = computed(() => {
   return drinksStore.getSearchDrinks
 })
 
 onMounted(() => {
-  drinksStore.searchDrink(route.params.letter)
+  if(route.params.letter) {
+    drinksStore.searchDrink(route.params.letter)
+  }
 })
 
-watch(route, ()=>{
+watch(route, () => {
   drinksStore.searchDrink(route.params.letter)
 })
 
