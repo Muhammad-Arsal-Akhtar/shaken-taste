@@ -6,6 +6,7 @@ import CocktailByNameView from '@/views/CocktailByNameView.vue'
 import CocktailByIngredientView from '@/views/CocktailByIngredientView.vue'
 import DefaultLayout from '@/components/DefaultLayout.vue'
 import DrinkDetails from '@/views/DrinkDetails.vue'
+import IngredientView from '@/views/IngredientView.vue'
 
 
 const router = createRouter({
@@ -29,6 +30,11 @@ const router = createRouter({
           path: '/by-name/:name?',
           name: 'byName',
           component: CocktailByNameView,
+        },
+        {
+          path: '/ingredient',
+          name: 'ingredient',
+          component: IngredientView,
         },
         {
           path: '/by-ingredient/:ingredient?',

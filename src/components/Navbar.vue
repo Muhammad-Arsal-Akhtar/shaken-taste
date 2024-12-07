@@ -15,7 +15,7 @@
                 Cocktails By Letter
             </router-link>
 
-            <router-link :to="{ name: 'byIngredient' }"
+            <router-link :to="{ name: 'ingredient' }"
                 class="inline-flex items-center h-full px-2 transition-colors hover:bg-green-200">
                 Cocktails By Ingredients
             </router-link>
