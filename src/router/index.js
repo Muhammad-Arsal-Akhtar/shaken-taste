@@ -32,14 +32,21 @@ const router = createRouter({
           component: CocktailByNameView,
         },
         {
-          path: '/ingredient',
-          name: 'ingredient',
-          component: IngredientView,
-        },
-        {
           path: '/by-ingredient/:ingredient?',
           name: 'byIngredient',
           component: CocktailByIngredientView,
+          beforeEnter: (to, from, next) => {
+            if (!to.params.ingredient) {
+              next({ path: '/ingredient' });
+            } else {
+              next();
+            }
+          },
+        },
+        {
+          path: '/ingredient',
+          name: 'ingredient',
+          component: IngredientView,
         },
         {
           path: '/drink-details/:id',
@@ -49,15 +56,6 @@ const router = createRouter({
         
       ],
     },
-    
-    // {
-    //   path: '/about',
-    //   name: 'about',
-    //   // route level code-splitting
-    //   // this generates a separate chunk (About.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   // component: () => import('../views/AboutView.vue'),
-    // },
   ],
 })
 
