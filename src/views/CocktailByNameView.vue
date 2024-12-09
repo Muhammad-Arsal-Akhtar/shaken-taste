@@ -18,11 +18,10 @@ const drinksStore = useSearchDrinksStore()
 const route = useRoute()
 
 const drinkKeyword = ref('')
+
 const changeDrink = () => {
-  if (drinkKeyword.value.trim()) {
-     drinksStore.searchDrink(drinkKeyword.value);
-  }
-}
+  drinksStore.searchDrink(drinkKeyword.value.trim());
+};
 
 const drinks = computed(() => {
   return drinksStore.getSearchDrinks

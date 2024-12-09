@@ -7,7 +7,8 @@ export const useSearchDrinksStore = defineStore('searchDrinks', () => {
   const drinks = ref([]);
 
   function searchDrink(drinkKeyword) {
-    axiosClient
+    if(drinkKeyword){
+      axiosClient
       .get(`search.php?s=${drinkKeyword}`)
       .then(({ data }) => {
         if (data.drinks) {
@@ -21,6 +22,9 @@ export const useSearchDrinksStore = defineStore('searchDrinks', () => {
         console.error('Error fetching drinks:', error);
         drinks.value = [];
       });
+    }else{
+      drinks.value = [];
+    }
   }
 
   const getSearchDrinks = computed(() => {
