@@ -4,10 +4,7 @@
       v-model="drinkKeyword" @change="changeDrink" />
   </div>
 
-
-  <div class="grid grid-cols-1 gap-3 p-8 md:grid-cols-3">
-    <DrinkItem v-for="drink in drinks" :key="drink.id" :drink="drink"  />
-  </div>
+  <Drinks :drinks="drinks" />
 
 </template>
 
@@ -15,7 +12,7 @@
 import { useSearchDrinksStore } from '@/stores/searchDrinks';
 import { ref, computed, onMounted } from 'vue';
 import { useRoute } from 'vue-router'
-import DrinkItem from '@/components/DrinkItem.vue';
+import Drinks from '@/components/Drinks.vue';
 
 const drinksStore = useSearchDrinksStore()
 const route = useRoute()

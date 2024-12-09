@@ -7,9 +7,7 @@
       </router-link>
     </div>
 
-    <div class="grid grid-cols-1 gap-3 p-8 md:grid-cols-3">
-      <DrinkItem v-for="drink in drinks" :key="drink.id" :drink="drink" />
-    </div>
+    <Drinks :drinks="drinks" />
   </div>
 </template>
 
@@ -17,7 +15,7 @@
 import { useSearchDrinksStore } from '@/stores/searchDrinksByLetter';
 import { onMounted, computed, watch } from 'vue';
 import { useRoute } from 'vue-router';
-import DrinkItem from '@/components/DrinkItem.vue';
+import Drinks from '@/components/Drinks.vue';
 
 const drinksStore = useSearchDrinksStore()
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
