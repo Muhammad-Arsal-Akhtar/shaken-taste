@@ -1,10 +1,12 @@
 <template>
-  <div class="p-6">
-    <input type="text" class="w-full border-2 border-gray-300 rounded" placeholder="Enter the drink name..."
-      v-model="drinkKeyword" @change="changeDrink" />
-  </div>
+  <div>
+    <div class="p-6">
+      <input type="text" class="w-full border-2 border-gray-300 rounded" placeholder="Enter the drink name..."
+        v-model="drinkKeyword" @change="changeDrink" />
+    </div>
 
-  <Drinks :drinks="drinks" />
+    <Drinks :drinks="drinks" />
+  </div>
 
 </template>
 
@@ -29,7 +31,7 @@ const drinks = computed(() => {
 
 onMounted(() => {
   drinkKeyword.value = route.params.name
-  if(drinkKeyword.value){
+  if (drinkKeyword.value) {
     changeDrink()
   }
 })
