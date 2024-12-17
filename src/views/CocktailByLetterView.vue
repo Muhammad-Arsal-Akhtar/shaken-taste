@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="flex justify-center gap-1 mt-2">
+    <div class="flex flex-wrap justify-center gap-4 p-4">
       <router-link :to="{ name: 'byLetter', params: { letter } }" v-for="letter in letters" :key="letter"
       class="inline-block px-3 py-2 text-2xl font-semibold text-gray-700 transition-all duration-300 transform rounded-lg hover:scale-110 hover:text-green-600 hover:bg-gray-200">
         {{ letter }}
