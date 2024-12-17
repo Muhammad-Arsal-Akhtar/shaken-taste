@@ -5,8 +5,10 @@ import axiosClient from '@/axiosClient';
 export const useSearchDrinksStore = defineStore('searchDrinksByIngredient', () => {
   // Make drinks reactive
   const drinks = ref([]);
+  const isLoading = ref(false)
 
   function searchDrink(drinkKeyword) {
+    isLoading.value = true
     axiosClient
       .get(`filter.php?i=${drinkKeyword}`)
       .then(({ data }) => {
@@ -20,6 +22,8 @@ export const useSearchDrinksStore = defineStore('searchDrinksByIngredient', () =
       .catch((error) => {
         console.error('Error fetching drinks:', error);
         drinks.value = [];
+      }).finally(()=>{
+        isLoading.value = false
       });
   }
 
@@ -35,5 +39,5 @@ export const useSearchDrinksStore = defineStore('searchDrinksByIngredient', () =
     });
   });
 
-  return { drinks, searchDrink, getSearchDrinks };
+  return { drinks, searchDrink, getSearchDrinks, isLoading };
 });
