@@ -7,7 +7,9 @@
       </router-link>
     </div>
 
-    <Drinks :drinks="drinks" />
+    <Drinks :drinks="drinks">
+      There are no drinks available. Click on letter to get.
+    </Drinks>
   </div>
 </template>
 

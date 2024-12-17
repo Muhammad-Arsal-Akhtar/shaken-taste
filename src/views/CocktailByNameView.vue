@@ -5,7 +5,9 @@
         v-model="drinkKeyword" @change="changeDrink" />
     </div>
 
-    <Drinks :drinks="drinks" />
+    <Drinks :drinks="drinks">
+      There are no drinks available. Type on the Search to get.
+    </Drinks>
   </div>
 
 </template>
