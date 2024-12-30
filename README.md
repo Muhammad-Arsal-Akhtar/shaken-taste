@@ -25,7 +25,7 @@ After cloning the project into your directory, follow the given commands for the
 
 ## Screenshots
 
-<img src="./assets/landing.png" alt="App Screenshot" width="400" height="auto" />
+<img src="./assets/landing-page.png" alt="App Screenshot" width="400" height="auto" />
 
 <br />
 
