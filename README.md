@@ -1,29 +1,52 @@
-# vue-drinks
+# Tall Stack Ecommerce
 
-This template should help get you started developing with Vue 3 in Vite.
+The Shaken Taste App is a simple and easy-to-use web application for finding different drinks. Users can search for drinks by name, ingredient, or the first letter, making it easy to discover new recipes or find favorites. This app is designed to be user-friendly and helpful for anyone who wants a smooth drink search experience. It’s great for learning or creating a basic drink search tool with a clear and simple interface.
 
-## Recommended IDE Setup
+After cloning the project into your directory, follow the given commands for the its working.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
-## Customize configuration
+### Prerequisites
+- HTML
+- CSS
+- Javascript
+- Node.js & npm
 
-See [Vite Configuration Reference](https://vite.dev/config/).
 
-## Project Setup
+## Technologies Used
 
-```sh
+- **Frontend**: HTML, Tailwind CSS, Vue Js 3
+- **JavaScript**: Node.js, npm
+- **Store**: Pinia.
+- **Library**: VueJs Router.
+- **Build Tools**: (Vite)
+- **Version Control**: Git
+- **Others**: HeroIcons and Flowbite.
+
+
+## Screenshots
+
+<img src="images/landing-page.png" alt="App Screenshot" width="400" height="auto" />
+
+<br />
+
+<img src="images/search-using-letter.png" alt="App Screenshot" width="400" height="auto" />
+<br />
+
+<img src="images/search-using-ingredients.png" alt="App Screenshot" width="400" height="auto" />
+<br />
+
+<img src="images/drink-details.png" alt="App Screenshot" width="400" height="auto" />
+
+After cloning the project
+
+# Navigate into the project directory:
+cd your-repo
+
+
+# Generate Node dependencies
 npm install
-```
 
-### Compile and Hot-Reload for Development
 
-```sh
+# Run the command for assets compiling
 npm run dev
-```
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
