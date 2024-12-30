@@ -26,17 +26,15 @@ After cloning the project into your directory, follow the given commands for the
 ## Screenshots
 
 <img src="./assets/landing-page.png" alt="App Screenshot" width="400" height="auto" />
-
 <br />
 
-<!-- <img src="assets/images/search-using-letter.png" alt="App Screenshot" width="400" height="auto" />
+<img src="./assets/search-using-letter.png" alt="App Screenshot" width="400" height="auto" />
 <br />
 
-<img src="assets/images/search-using-ingredients.png" alt="App Screenshot" width="400" height="auto" />
+<img src="./assets/search-using-ingredients.png" alt="App Screenshot" width="400" height="auto" />
 <br />
 
-<img src="assets/images/drink-details.png" alt="App Screenshot" width="400" height="auto" /> -->
-
+<img src="./assets/drink-details.png" alt="App Screenshot" width="400" height="auto" />
 <br />
 
 After cloning the project
